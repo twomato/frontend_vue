@@ -1,0 +1,29 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    div#app { padding: 30px; margin: 30px auto; max-width: 500px; 
+      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>현재시각</h1>
+    <div id="time">{{ time }}</div>
+  </div>
+
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        time: new Date()
+      },
+      mounted: function() { //앱객체가 만들어지고 처음으로 화면이 만들어지기 직전에 
+        let callback = () => this.time = new Date(); // 새로운 객체 생성
+        setInterval(callback, 1000); //1초마다 한번씩(정해진 간격으로) callback 함수 호출
+      }
+    })
+   </script>
+</body>    
+</html>
