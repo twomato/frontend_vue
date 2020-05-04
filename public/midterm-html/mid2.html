@@ -9,13 +9,21 @@
   </style>
 </head>
 <body>
+  <canvas id="clock" width="600" height="600"></canvas>
   <div id="app">
-    <h1>disabled</h1>
     <button type="button" v-on:click="start" v-bind:disabled="run">보이기</button>
     <button type="button" v-on:click="stop" v-bind:disabled="!run">감추기</button>  
   </div>
 
   <script type="text/javascript">
+    let canvas = document.getElementById("clock");
+    let context = canvas.getContext("2d");
+
+    context.strokeStyle = "black";
+    context.fillStyle = "yellow";
+    context.fillRect(350, 500, 100, 100);
+    context.strokeRect(350, 500, 100, 100);
+    
     var app = new Vue({
       el: '#app',
       data: {
@@ -30,6 +38,7 @@
         }
       }
     })
+
    </script>
 </body>
 </html>
