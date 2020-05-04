@@ -6,22 +6,18 @@
     div#app { padding: 50px; margin: 30px auto; max-width: 600px; 
       border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; font-size: 11pt; }
     input { padding: 6px; width: 200px; }
-    button { padding: 6px; width: 50px; }
+    button { padding: 6px; width: 80px; height: 30;}
   </style>
 </head>
 <body>
   <div id="app">
-    <input type="text" v-model="title" vaule=0/>    
-    <button type="button" onClick="javascript:this.form.amount.value++;">++</button>
-    <button type="button" onClick="javascript:this.form.amount.value--;">--</button>
+    <form>
+      <input type=text name=amount value=0>
+      <button type=button value="++" onClick="javascript:this.form.amount.value++;">++</button>
+      <button type=button value="--" onClick="javascript:this.form.amount.value--;">--</button>
+      </form>
   </div>
   <script type="text/javascript">
-    var app = new Vue({
-      el: '#app',
-      data: {
-        title: '0'
-      }
-    }) 
    </script>
 </body>    
 </html>

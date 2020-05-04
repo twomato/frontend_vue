@@ -6,10 +6,12 @@ function sum(...a) {
         result += a[i];
     return result; 
 }
-function test_sum(f){
+function test_sum(){
     for(let i=0; i<5; i++){
         num[i]=Math.floor(Math.random()*10)+1;
         console.log(num);
     }
 }
-test_sum
+for(let i=0; i<5; i++){
+  sum(test_sum);
+}
